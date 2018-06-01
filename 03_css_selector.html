@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>데이터 사이언스 스쿨</title>
+    <style media="screen">
+      /* sss selecrot */
+
+      /* 1. ID Selecrot  */
+        /* 아이디를 셀렉트 할때는 #(아이디이름)으로 선택합니다 */
+        /* 여러개를 설렉트할때는 ,로 구분하여 계속 넣어줍니다. */
+      /* #ds2, #ds3{
+        color: red;
+      } */
+
+      /* 2. Class Selector */
+        /* 앨리먼트를 묶어서 같은 css를 적용할 때 사용합니다. */
+        /* 앨리먼트를 묶어서 같은 css를 적용할 때 사용합니다. */
+      /* .ds1, .ds2{
+        font-size:24px;
+        margin:10px 20px;
+      } */
+
+      /* 3. not Selector */
+        /* 셀렉터로 엘리먼트를 하나만 제거하고 싶을때 사용합니다. */
+      /* .ds:not(.ds2){
+        color : blue;
+      } */
+
+      /* 4. first-child Selector */
+      .ds:first-child{
+        background-color: yellow;
+      }
+      .ds:last-child{
+        background-color: blue;
+      }
+
+      /* 6. nth-child : n번째 엘리먼트 셀렉트 */
+      .ds:nth-child(4), .ds:nth-child(3){
+        background-color: orange;
+      }
+
+      /* 7. deepth, level로 엘리먼트 셀렉트 */
+      /* 공백문자로 하위 엘리먼트를 셀렉트 했을때, 모든 하위 엘리먼트를 셀렉팅 합니다. */
+      .contents > h1{
+        font-weight :lighter;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <!-- p#ds${dss$}*3 -->
+    <!-- <p id="ds1">dss1</p>
+    <p id="ds2">dss2</p>
+    <p id="ds3">dss3</p> -->
+
+    <!-- p.ds1{dss$}*2+p.ds2{dss$@3}*2 -->
+    <!-- <p class="ds1">dss1</p>
+    <p class="ds1">dss2</p>
+    <p class="ds2">dss3</p>
+    <p class="ds2">dss4</p> -->
+
+    <!-- p.ds.ds${ds$}*5 -->
+    <!-- <p class="ds ds1">ds1</p>
+    <p class="ds ds2">ds2</p>
+    <p class="ds ds3">ds3</p>
+    <p class="ds ds4">ds4</p>
+    <p class="ds ds5">ds5</p> -->
+
+    <!-- div.contents>div.txt>h1{inner_2}^h1{inner_1} -->
+    <div class="contents">
+      <div class="txt">
+        <h1>inner_2</h1>
+      </div>
+      <h1>inner_1</h1>
+    </div>
+
+
+
+
+  </body>
+</html>
