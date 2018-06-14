@@ -164,11 +164,11 @@ obj['familyName'] = "kim";
 console.log(obj);
 
 for(var key in obj){
-  console.log(key, obj[key])
+  console.log(key, obj[key]);
 }
 
 
-console.log("===Module===")
+console.log("=======Module=======");
 // OOP:추상화,캡슐화
 var Module = Module || {};
 (function(_Module){
@@ -186,3 +186,64 @@ var Module = Module || {};
 })(Module);
 
 console.log(Module.getName());
+
+// 함수 (2가지의 선언방법)
+// 호이스팅 - hoisting
+function sum(num1, num2){
+  return num1+num2;
+}
+var result = sum(1,2);
+console.log(result);
+
+var minus = function(num1, num2){
+  return num1 - num2;
+};
+
+var test = 1;
+
+// 스코프
+console.log("=======Scope=======");
+var a = "dss1";
+function disp(){
+  var a = "dss2"; //var를 붙이면 지역변수로 사용하게됨
+
+  console.log(a);
+}
+disp();
+console.log(a);
+
+
+console.log("=======immediate Function=======");
+// 즉시실행함수, 익명함수---------------------------------------------
+// 주의! 자바스크립트는 프론트엔드 언어입니다.
+// 프론트엔드 언어는 코드가 다 노출됩니다.ㅜㅜ
+// 브라우져에서 함수를 마음대로 가져다 쓸 수 있음.
+// 이를 방지하기위해 즉시실행함수, 익명함수를 사용함.
+// 문자열 사용시 ''를 이용해야한다.
+// html에서 ""를 사용하기때문에. 중복이 안되도록 하려면 그렇게 써라.
+(function(){
+  var name = 'sungryong';
+  var disp = function(){
+    console.log(name);
+  };
+  disp();
+})();
+
+
+console.log("=======Callback function=======");
+// callback
+// 콜백함수 - 함수의 argument로 함수를 받아서 모든 코드를 실행한 후에
+//            argument로 받은 함수를 실행
+function getData(callback, num1, num2){
+  var result = num1 + num2;
+  callback(result);
+}
+
+function disp(number){
+  console.log(number);
+}
+function sqrt(){
+  console.log(result*result);
+}
+
+getData(disp, 2,3);
