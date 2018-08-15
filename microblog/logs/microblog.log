@@ -1,0 +1,75 @@
+2018-07-30 10:25:51,380 INFO: Microblog startup [in /home/ubuntu/microblog/app/__init__.py:57]
+2018-07-30 10:30:31,993 INFO: Microblog startup [in /home/ubuntu/microblog/app/__init__.py:57]
+2018-07-30 10:43:33,723 INFO: Microblog startup [in /home/ubuntu/microblog/app/__init__.py:57]
+2018-07-30 11:31:45,700 INFO: Microblog startup [in /home/ubuntu/microblog/app/__init__.py:57]
+2018-07-30 11:32:02,379 ERROR: Exception on /login [POST] [in /home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/microblog/app/routes.py", line 56, in login
+    return redirect(url_for(next_page[1:])) # error : /index로 입력되는데 /를 해석못하는 문제가 있음. 강제로 /제거함
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint ''. Did you mean 'reset_password_request' instead?
+2018-07-30 11:42:29,886 INFO: Microblog startup [in /home/ubuntu/microblog/app/__init__.py:57]
+2018-07-30 13:12:25,546 ERROR: Exception on /reset_password_request [POST] [in /home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/microblog/app/routes.py", line 89, in reset_password_request
+    send_password_reset_email(user)
+  File "/home/ubuntu/microblog/app/email.py", line 20, in send_password_reset_email
+    user=user, token=token))
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/microblog/app/templates/email/reset_password.html", line 5, in top-level template code
+    <a href="{{url_for('reset_password, token=token, _external=True')}}">
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/ubuntu/.pyenv/versions/3.6.5/envs/flaskexample_py/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password, token=token, _external=True'. Did you mean 'reset_password_request' instead?
